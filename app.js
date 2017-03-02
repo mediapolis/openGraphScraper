@@ -459,7 +459,12 @@ exports.getOG = function (options, callback) {
       if (options.encoding === null) {
         var char = charset(response.headers, body, peekSize) || jschardet.detect(body).encoding;
         if (char) {
-          body = iconv.decode(body, char);
+          try {
+            body = iconv.decode(body, char);
+          }
+          catch(e) {
+            console.log('iconv err url:' + options.url,e);
+          }
         } else {
           body = body.toString();
         }
