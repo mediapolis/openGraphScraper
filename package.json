@@ -5,7 +5,7 @@
   "license": "MIT",
   "main": "app.js",
   "engines": {
-    "node": "6.x"
+    "node": "8.x"
   },
   "author": {
     "name": "Josh Shemas",
